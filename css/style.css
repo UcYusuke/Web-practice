@@ -5,7 +5,8 @@ body{
 }
 
 h1,
-h2{
+h2,
+h3{
   font-weight: normal;
   margin: 0;
 }
@@ -21,6 +22,8 @@ p{
 a{
   text-decoration: none;
   color: inherit;
+  cursor: pointer;
+
 }
 
 ul{
@@ -35,6 +38,11 @@ ul{
     max-width: 800px;
     background: skyblue;
 }
+
+:root{
+  --Mincho-font:'游明朝',serif;
+}
+
 
 /* header */
 
@@ -56,6 +64,7 @@ header h1{
   line-height: 76px;
 }
 
+
 /* hero */
 
 .hero{
@@ -66,7 +75,7 @@ header h1{
   background-size: cover;
   color: white;
   font-size: 24px;  
-  font-family: '游明朝',serif;
+  font-family: var(--Mincho-font);
   text-align: center;
   outline: 1px solid red;
 }
@@ -75,49 +84,313 @@ header h1{
     ruby-position: under;
 }
 
-/* dairy */
 
-.dairy{
+/* notice */
+
+.notice{
+  margin-top: 16px;
+  width: 100%;
+  height: 72px;
+  background: #f5f5ee;
+  display: flex;
+  align-items: center;
+}
+
+.notice div{
+  display: flex;
+}
+
+.notice img{
+  width: auto;
+  height: 56px;
+  margin-left: 16px;
+}
+
+.notice a{
+  height: 56px;
+  transition: opacity .3s ;
+}
+
+.notice a:hover{
+  opacity: 0.7;
+}
+
+.notice a+a{
+  box-sizing: border-box;
+  font-size: 14px;
+  padding: 4px 0 0 4px;
+  transition: color 1s;
+}
+
+.notice a+a:hover{
+  color: darkolivegreen;
+}
+
+
+/* inquiry */
+
+.inquiry{
+  width: 60%;
+  padding: 32px 0 16px;
+  margin: 0 auto;
+}
+
+.inquiry p{
+  font-size: 12px;
+  font-family: var(--Mincho-font);
+  color: #333;
+  text-align: center;
+}
+
+.inquiry ul{
+  display: flex;
+  gap: 4px;
+}
+
+.inquiry img{
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+}
+
+/* recruit */
+
+.recruit{
+  padding: 16px 0;
+}
+.recruit img{
+  width: 100%;
+  height: 275px;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+
+/* blog */
+
+.blog{
     padding: 32px 0;
 }
 
-.dairy ul{
+.blog-category{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.blog-category li a{
+  position: relative;
+  font-size: 12px;
+  font-family: var(--Mincho-font);
+  letter-spacing: 2px;
+  color:#333 ;
+}
+
+.blog-category li a::after{
+  content: "";
+  /* 線の位置 */
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  /* 線の形状 */
+  width: 100%;
+  height: 1px;
+  background: black;
+  /* アニメーションの指定 */
+  transition: all .5s;
+  transform: scale(0,1);
+  transform-origin: center top;
+}
+
+.blog-category a:hover::after{
+  transform: scale(1,1); /* X方向にスケール拡大 */
+}
+
+.blog-category i{
+  margin-right: 2px;
+}
+
+.blog-article{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-top: 8px;
     gap: 16px;
 }
 
-.dairy li{
+/* 1,2番目の記事 */
+.blog-article li{
     width: calc(100% - 16px);
 }
 
-.dairy li:nth-child(n+3){
+/* 3番目以降の記事 */
+.blog-article li:nth-child(n+3){
     width: calc((100% - 32px) / 2);
 }
+.blog-article li:nth-child(n+3) div img{
+  display: none;
+}
 
-.dairy li img{
+.blog-article a{
+  transition: opacity .5s;
+}
+
+.blog-article a:hover{
+  opacity: 0.7;
+}
+
+.blog-article li img{
     width: 100%;
 }
 
-.dairy li div{
+.blog-article li div{
     display: flex;
     align-items: center;
     column-gap: 8px;
 }
 
-.dairy li div img{
+.blog-article li div img{
     width: 30px;
     height: 30px;
 }
 
-.dairy .desc{
+/* 記事のキャプション */
+.blog-article .desc{
     display: flex;
     flex-direction: column;
     align-items: flex-start;
 }
 
-.dairy .desc p{
+/* 記事の日付 */
+.blog-article .desc p{
     font-size: 12px;
     color: gray;
 }
+
+
+/* can-do */
+
+.can-do{
+  background: #f6faf2;
+  width: 100%;
+  padding: 64px 0 0;
+}
+
+.can-do .features h2,h3,p{
+  font-family: var(--Mincho-font);
+}
+
+.can-do .features h2{
+  font-size: 22px;
+  letter-spacing: 4px;
+  padding-bottom: 24px;
+  text-align: center;
+}
+
+.can-do .features li{
+  width: 70%;
+  margin: 0 auto;
+}
+
+.can-do .features div{
+  position: relative;
+  margin-bottom: 150px;
+}
+
+.can-do .features img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  vertical-align: bottom;
+  border: 2px solid #b2b2b2;
+
+  position: relative;
+  z-index: 1;
+}
+
+/* 奇数番目の記事 */
+.can-do .features li:nth-child(odd) img{
+  left: -8px;
+}
+
+/* 偶数番目の記事 */
+.can-do .features li:nth-child(even) img{
+  left: 48px;
+}
+
+.can-do .features h3{
+  width: 80%;
+  height: 56px;
+  line-height: 56px;
+  font-size: 16px;
+  letter-spacing: 2px;
+  text-align: center;
+  background: #f2efe2;
+  box-shadow: -8px 8px #e2e6e9;
+  position: absolute;
+  z-index: 2;
+}
+
+/* 奇数番目の記事 */
+.can-do .features li:nth-child(odd) h3{
+  top: 100%;
+  transform: translate(64px,-50%);
+}
+
+/* 偶数番目の記事 */
+.can-do .features li:nth-child(even) h3{
+  top: 100%;
+  transform: translate(24px,-50%);
+}
+
+.can-do .features p{
+  box-sizing: border-box;
+  width: 100%;
+  padding: 80px 16px 32px;
+  color: #333;
+  font-size: 14px;
+  letter-spacing: 1px;
+  background: #fff;
+  
+  position: absolute;
+}
+
+/* 奇数番目の記事 */
+.can-do .features li:nth-child(odd) p{
+  top: 100%;
+  transform: translate(20px,-40px);
+}
+
+/* 偶数番目の記事 */
+.can-do .features li:nth-child(even) p{
+  top: 100%;
+  transform: translate(0px,-40px);
+}
+
+.can-do .futureshop{
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  padding: 16px 0 0;
+
+}
+
+.can-do .futureshop img{
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  vertical-align: bottom;
+}
+
+/* about-us */
+
+.about-us{
+  display: flex;
+}
+.about-us img{
+  width: 100%;
+  object-fit: cover;
+  height: 160px;
+  vertical-align: bottom;
+}
+
