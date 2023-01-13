@@ -11,9 +11,9 @@ h3{
   margin: 0;
 }
 
-h2{
+/* h2{
     font-size: 18px;
-}
+} */
 
 p{
   margin: 0;
@@ -33,16 +33,26 @@ ul{
 }
 
 .container{
-    width: calc(100% - 64px);
+    width: calc(100% - 100px);
     margin: 0 auto;
     max-width: 800px;
-    background: skyblue;
 }
 
 :root{
-  --Mincho-font:'游明朝',serif;
+  --Mincho-font:"游明朝", "YuMincho", "ヒラギノ明朝 Pro W3", "Hiragino Mincho Pro", "MS Ｐ明朝", "MS PMincho", serif;
+  --Gothic-font:"游ゴシック体", "YuGothic", "游ゴシック", "Yu Gothic", "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
 }
 
+ruby{
+  ruby-position: under;
+  text-align: center;
+  ruby-align: center;
+}
+
+rt{
+  text-align: inherit;
+  font-size: 30%;
+}
 
 /* header */
 
@@ -77,12 +87,9 @@ header h1{
   font-size: 24px;  
   font-family: var(--Mincho-font);
   text-align: center;
-  outline: 1px solid red;
 }
 
-.hero ruby{
-    ruby-position: under;
-}
+
 
 
 /* notice */
@@ -178,6 +185,8 @@ header h1{
   flex-wrap: wrap;
 }
 
+
+
 .blog-category li a{
   position: relative;
   font-size: 12px;
@@ -265,6 +274,10 @@ header h1{
 .blog-article .desc p{
     font-size: 12px;
     color: gray;
+}
+
+.blog-article h2{
+  font-size: 18px;
 }
 
 
@@ -369,28 +382,183 @@ header h1{
 
 .can-do .futureshop{
   display: block;
-  width: 80%;
-  margin: 0 auto;
   padding: 16px 0 0;
 
 }
 
 .can-do .futureshop img{
-  width: 100%;
+  display: block;
+  width: 80%;
   height: 200px;
+  margin: 0 auto;
   object-fit: cover;
-  vertical-align: bottom;
 }
 
 /* about-us */
 
-.about-us{
+.about-us ul{
   display: flex;
-}
-.about-us img{
-  width: 100%;
-  object-fit: cover;
-  height: 160px;
-  vertical-align: bottom;
+  transform: translateX(-16vw);
 }
 
+.about-us img{
+  width: 33vw;
+}
+
+/* co-philosophy */
+
+.co-philosophy div{
+  width: 80%;
+  margin: 0 auto;
+  padding: 32px 0;
+}
+
+.co-philosophy h2{
+  font-size: 20px;
+  text-align: center;
+}
+
+.co-philosophy h3{
+  font-size: 30px;
+  font-family: var(--Mincho-font);
+  text-align: center;
+  padding: 32px 0;
+}
+
+.co-philosophy p{
+  font-size: 14px;
+  font-family: var(--Gothic-font);
+  line-height: 1.8;
+  padding-bottom:16px ;
+}
+
+/* solepro */
+
+.solepro{
+  width: 100%;
+  height: 330px;
+  background-image: url(../img/main1.png);
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  margin-bottom: 32px;
+}
+
+.solepro div{
+  width: 80%;
+  margin: 0 auto;
+  background-color: #fff;
+  opacity: 0.8;
+  border-radius: 4px;
+  padding: 16px;
+}
+
+.solepro h2{
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding-bottom: 16px;
+}
+
+.solepro p{
+  font-size: 14px;
+  font-family: var(--Gothic-font);
+  line-height: 1.8;
+  background-color:rgb(240,240,240,.9);
+}
+
+
+/* days */
+
+.days{
+  padding: 32px 0;
+}
+
+.days h2{
+  font-size: 22px;
+  font-family: var(--Mincho-font);
+  letter-spacing: 4px;
+  text-align: center;
+  padding-bottom: 32px;
+}
+
+.days ul{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px ;
+}
+
+.days li{
+  width: calc((100% - 32px) / 3);
+}
+
+.days li img{
+  width: 100%;
+}
+
+.days li a{
+  transition: opacity .3s;
+}
+
+.days li a:hover{
+  opacity: 0.7;
+}
+
+.days .more{
+  display: block;
+  width: 70%;
+  font-family: var(--Mincho-font);
+  color: #333;
+  letter-spacing: 1px;
+  line-height: 40px;
+  border: 1px solid #333;
+  text-align: center;
+  margin: 32px auto 0;
+}
+
+
+/* footer */
+
+footer{
+  background: #f1f2ee;
+  padding: 40px 0 32px;
+}
+
+footer h2,
+h3,
+p{
+  font-family: var(--Gothic-font);
+  text-align: center;
+}
+
+footer h2{
+  font-size: 60px;
+  letter-spacing: 2px;
+  padding-bottom: 16px;
+}
+
+footer h3,
+p{
+  color: #555;
+  padding-bottom: 4px;
+}
+
+footer h3{
+  font-size: 14px;
+  font-weight: bold;
+}
+
+footer p{
+  font-size: 12px;
+}
+
+footer .adress li{
+  padding-bottom: 16px;
+}
+
+footer .copyright{
+  font-size: 14px;
+  color: #aaa;
+  text-align: center;
+  padding: 16px 0;
+}
